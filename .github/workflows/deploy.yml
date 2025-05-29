@@ -21,10 +21,10 @@ jobs:
           aws-region: us-east-1
 
       - name: Sync S3 Bucket
-        run: aws s3 sync . s3://tise-cloud-resume-2025-tise --delete
+        run: aws s3 sync . s3://tise-cloud-resume-2025-tise --delete 
 
       - name: Invalidate CloudFront Cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id YOUR_CLOUDFRONT_DIST_ID \
+            --distribution-id E15OWUL13FESCD \
             --paths "/*"
